@@ -2,7 +2,7 @@
 
 # Using API
 
-```http(s)://5b3ec26ac3c3fb00147427f6.mockapi.io/api/v1/:endpoint```
+Mockup API: ```http(s)://5b3ec26ac3c3fb00147427f6.mockapi.io/api/v1/:endpoint```
 
 ## Endpoint vpnserver ##
    * `get /vpnuser`: return array of vpnservers
