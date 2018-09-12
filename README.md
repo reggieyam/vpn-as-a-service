@@ -7,44 +7,56 @@
 
 # Using API
 
-Mockup API: ```http(s)://5b3ec26ac3c3fb00147427f6.mockapi.io/api/v1/:endpoint```
+Mockup API: ```http://cb.atspeeds.com:8080/:endpoint```
 
 ## Endpoint vpn user ##
 
-   * `get /vpnuser/:id`: return object of vpnuser with specific id
+   * `get /clients`: GET all clients
+   
+   * `get /clients/:id`: GET client with specific id (phone)
    
        | Name            | Value            | Description                           |
        |-----------------|------------------|---------------------------------------|
-       | id              | uuid             | userId                          |
-       | createdAt       | unixtime         | timestamp at which object was created |
+       | id              | uuid             | phone number                          |
        | username        | string | username for ikv2 vpn service        |
        | password        | string                 | password for ikv2 vpn service         |
-       | secret                | string                 | secret for ikv2 vpn service   |
-       | email                |  email                | registered email         |
-       | enable                |  Boolean                | status of user         |
        
-   * `post /vpnuser`: create vpnuser, body in json format
+   * `post /clients`: CREATE client, body in json format
+      
+      Example of Request body JSON
+        
+       `{ 
+	      "userId": "33vpn.com|13600000003",
+        "ip": "47.75.166.162"
+       }`
 
        | Name            | Value            | Description                           |
        |-----------------|------------------|---------------------------------------|
-       | id              | uuid             | userId                          |
-       | createdAt       | unixtime         | timestamp at which object was created |
+       | userId              | string             | domain + phone number (mandatory)                          |
+       | ip       | string         | ip address of client (optional) |
+       
+      Example of Response
+      `{
+    "domain": "33vpn.com",
+    "userId": "13600000001",
+    "username": "13600000001",
+    "password": "KxUvhF",
+    "server": "vpn.atspeeds.com",
+    "protocol": "IKEv2",
+    "secret": "atspeeds"
+      }`
+            
+       | Name            | Value            | Description                           |
+       |-----------------|------------------|---------------------------------------|
+       | domain              | string             | extract from userId                         |
+       | userId       | string         | phone number |
        | username        | string | username for ikv2 vpn service        |
        | password        | string                 | password for ikv2 vpn service         |
        | secret                | string                 | secret for ikv2 vpn service   |
-       | email                |  email                | registered email         |
-       | enable                |  Boolean                | status of user         |
-
-   * `put /vpnuser`: updated object vpnuser
-   * `delete /vpnuser`: deleted object vpnuser
    
-## Endpoint vpn server ##
-   * `get /vpnserver`: return array of vpn servers 
-   * `get /vpnuser/:geo`: return object of vpn server by geo id
-
-       | Name            | Value            | Description                           |
-       |-----------------|------------------|---------------------------------------|
-       | hostname              | string             | hostname of vpn server, resolveable via public DNS                          |
-       | geo       | ISO 3166 Country Codes         | The country codes can be represented either as a two-letter code (alpha-2) |
+   * `put /clients/:phone`: Update vpn client by phone
+   
+   * `delete /clients/:phone`: Delete VPN client by phone
+ 
    
 
