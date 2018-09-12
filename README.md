@@ -36,6 +36,7 @@ Mockup API: ```http://cb.atspeeds.com:8080/:endpoint```
        | ip       | string         | ip address of client (optional) |
        
       Example of Response
+      
       `{
     "domain": "33vpn.com",
     "userId": "13600000001",
