@@ -62,7 +62,7 @@ Mockup API: ```http://cb.atspeeds.com:8080/:endpoint```
    
    * `put /clients/:phone`: Update vpn client by phone
     
-   Example of Request body JSON
+       Example of Request body JSON
         
        `{ 
 	      "userId": "33vpn.com|13600000003",
@@ -71,13 +71,13 @@ Mockup API: ```http://cb.atspeeds.com:8080/:endpoint```
        }`
  
  
- | Name            | Value            | Description                           |
- |-----------------|------------------|---------------------------------------|
- | userId              | string             | domain + phone number (mandatory)                          |
- | userPass | BASE64             | user Password in BASE64 (mandatory)                        |
- | ip       | string         | ip address of client (optional) |
+      | Name            | Value            | Description                           |
+      |-----------------|------------------|---------------------------------------|
+      | userId              | string             | domain + phone number (mandatory)                          |
+      | userPass | BASE64             | user Password in BASE64 (mandatory)                        |
+      | ip       | string         | ip address of client (optional) |
        
-   Example of Response
+      Example of Response
       
       `{
     "domain": "33vpn.com",
@@ -89,8 +89,7 @@ Mockup API: ```http://cb.atspeeds.com:8080/:endpoint```
     "protocol": "IKEv2",
     "secret": "atspeeds"
       }`
-            
-
+     
        | Name            | Value            | Description                           |
        |-----------------|------------------|---------------------------------------|
        | domain              | string             | extract from userId                         |
@@ -99,7 +98,7 @@ Mockup API: ```http://cb.atspeeds.com:8080/:endpoint```
        | username        | string | username for ikv2 vpn service        |
        | password        | string                 | password for ikv2 vpn service         |
        | secret                | string                 | secret for ikv2 vpn service   |
-   
+       
    * `delete /clients/:phone`: Delete VPN client by phone
  
    
