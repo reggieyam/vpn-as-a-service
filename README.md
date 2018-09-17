@@ -7,7 +7,7 @@
 
 # Using API
 
-Mockup API: ```http://cb.atspeeds.com:8080/:endpoint```
+Mockup API: ```http://cb.atspeeds.com/:endpoint```
 
 ## Endpoint vpn user ##
 
