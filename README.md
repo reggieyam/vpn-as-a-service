@@ -62,7 +62,7 @@ Mockup API: ```http://cb.atspeeds.com:8080/:endpoint```
    
    * `put /clients/:phone`: Update vpn client by phone
     
-    Example of Request body JSON
+   Example of Request body JSON
         
        `{ 
 	      "userId": "33vpn.com|13600000003",
@@ -76,7 +76,7 @@ Mockup API: ```http://cb.atspeeds.com:8080/:endpoint```
        | userPass | BASE64             | user Password in BASE64 (mandatory)                        |
        | ip       | string         | ip address of client (optional) |
        
-      Example of Response
+   Example of Response
       
       `{
     "domain": "33vpn.com",
