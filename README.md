@@ -34,7 +34,7 @@ Mockup API: ```http://cb.atspeeds.com:8080/:endpoint```
 
        | Name            | Value            | Description                           |
        |-----------------|------------------|---------------------------------------|
-       | userId              | string             | domain + phone number (mandatory)                          |
+       | userId              | string             | domain + phone number, separated with pipe  (mandatory)                          |
        | userPass | BASE64             | user Password in BASE64 (mandatory)                        |
        | ip       | string         | ip address of client (optional) |
        
@@ -73,7 +73,7 @@ Mockup API: ```http://cb.atspeeds.com:8080/:endpoint```
  
       | Name            | Value            | Description                           |
       |-----------------|------------------|---------------------------------------|
-      | userId              | string             | domain + phone number (mandatory)                          |
+      | userId              | string             | domain + phone number, separated with pipe (mandatory)                          |
       | userPass | BASE64             | user Password in BASE64 (mandatory)                        |
       | ip       | string         | ip address of client (optional) |
        
