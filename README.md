@@ -60,7 +60,7 @@ API: ```https://cb.atspeeds.com/:endpoint```
        | password        | string                 | password for ikv2 vpn service         |
        | secret                | string                 | secret for ikv2 vpn service   |
    
-   * `put /clients/:phone`: Update vpn client by phone
+   * `put /clients`: Update vpn client 
     
        Example of Request body JSON
         
