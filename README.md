@@ -69,12 +69,13 @@ Mockup API: ```http://cb.atspeeds.com:8080/:endpoint```
 	      "userPass": "c3RhY2thYnVzZS5jb20=",
         "ip": "47.75.166.162"
        }`
-
-       | Name            | Value            | Description                           |
-       |-----------------|------------------|---------------------------------------|
-       | userId              | string             | domain + phone number (mandatory)                          |
-       | userPass | BASE64             | user Password in BASE64 (mandatory)                        |
-       | ip       | string         | ip address of client (optional) |
+ 
+ 
+ | Name            | Value            | Description                           |
+ |-----------------|------------------|---------------------------------------|
+ | userId              | string             | domain + phone number (mandatory)                          |
+ | userPass | BASE64             | user Password in BASE64 (mandatory)                        |
+ | ip       | string         | ip address of client (optional) |
        
    Example of Response
       
@@ -89,6 +90,7 @@ Mockup API: ```http://cb.atspeeds.com:8080/:endpoint```
     "secret": "atspeeds"
       }`
             
+
        | Name            | Value            | Description                           |
        |-----------------|------------------|---------------------------------------|
        | domain              | string             | extract from userId                         |
