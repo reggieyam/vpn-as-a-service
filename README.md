@@ -143,7 +143,7 @@ API: ```https://api.atspeeds.com/:endpoint```
       
       Example of Request body JSON
         
-       ```{ 
+         ```{ 
 	      "userId": "13600000003",
               "domain": "33vpn.com",
 	      "userPass": "<newpasswordinbase64>",
@@ -152,13 +152,16 @@ API: ```https://api.atspeeds.com/:endpoint```
 	
 
 
+
        | Name            | Value            | Description                           |
        |-----------------|------------------|---------------------------------------|
        | doamin          | string           | domain name (mandatory)
        | userId              | string             | phone number (mandatory)               |
        | userPass | BASE64             | user Password in BASE64 (semi-optional)                        |
        | active       | Boolean         | Billing status (semi-optional) |
-       
+     
+
+
       Example of Response
       
       
@@ -176,7 +179,6 @@ API: ```https://api.atspeeds.com/:endpoint```
 	      "userId": "13600000003",
               "domain": "33vpn.com"
         }```
-
 
 
        | Name            | Value            | Description                           |
