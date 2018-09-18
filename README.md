@@ -22,7 +22,7 @@ API: ```https://api.atspeeds.com/:endpoint```
        | domain              | String           | Domain name               |
        
        
-       Example of Request body JSON
+    Example of Request body JSON
         
        ```{ 
 	      "userId": "13600000003",
@@ -31,7 +31,8 @@ API: ```https://api.atspeeds.com/:endpoint```
        }```
    
    
-       Example of Respons body 
+   
+   Example of Respons body 
         
        ```{
               "credential": {
@@ -44,12 +45,16 @@ API: ```https://api.atspeeds.com/:endpoint```
               "results": "success"
         }```
        
+       
+
        | Name            | Type            | Description                           |
        |-----------------|------------------|---------------------------------------|
        | results          | string             | success or failed                        |
        | credential        | Object           | Object of user credential   |
        | username        | string | username for ikv2 vpn service        |
        | password        | string                 | password for ikv2 vpn service         |
+       
+       
    
    * `POST /login`: User LOGIN
         Request Body
@@ -84,7 +89,9 @@ API: ```https://api.atspeeds.com/:endpoint```
                },
               "jwt":"<jwt_token>"
          }```
-       
+
+
+
        | Name            | Type            | Description                           |
        |-----------------|------------------|---------------------------------------|
        | results          | string             | success or failed                        |
@@ -109,7 +116,9 @@ API: ```https://api.atspeeds.com/:endpoint```
              ]
       }```
    
+   
    * `GET /clients?jwt=<jwt_token>`: GET client credential after login (with JWT token)
+   
       JWT is generated in login 
       
       Example of Response
@@ -128,6 +137,8 @@ API: ```https://api.atspeeds.com/:endpoint```
               }
       }```
 
+
+
    * `PUT /clients?jwt=<jwt_token>`: Update user status and login password
       
       Example of Request body JSON
@@ -138,6 +149,8 @@ API: ```https://api.atspeeds.com/:endpoint```
 	      "userPass": "<newpasswordinbase64>",
 	      "active": 1,
         }```
+	
+
 
        | Name            | Value            | Description                           |
        |-----------------|------------------|---------------------------------------|
@@ -148,25 +161,32 @@ API: ```https://api.atspeeds.com/:endpoint```
        
       Example of Response
       
+      
       ```{
               "result": "success"
         }```
+   
    
    * `delete /clients?jwt=<jwt_token>`: Delete VPN client by phone
 
       Example of Request body JSON
         
+
        ```{ 
 	      "userId": "13600000003",
               "domain": "33vpn.com"
         }```
+
+
 
        | Name            | Value            | Description                           |
        |-----------------|------------------|---------------------------------------|
        | doamin          | string           | domain name (mandatory)
        | userId              | string             | phone number (mandatory)               |
        
-      Example of Response
+     
+     
+     Example of Response
       
       ```{
               "result": "success"
