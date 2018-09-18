@@ -11,10 +11,11 @@ API: ```https://api.atspeeds.com/:endpoint```
 
 ## Endpoint vpn user 
 
-### `POST /signup`: User SIGNUP
+### `POST /signup`: User Signup
    
 #### Request Body
-   
+
+
        | Name            | Type            | Description                           |
        |-----------------|------------------|---------------------------------------|
        | userId              | uuid             | phone number                         |
