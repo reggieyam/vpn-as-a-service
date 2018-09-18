@@ -30,7 +30,6 @@ API: ```https://api.atspeeds.com/:endpoint```
    ```
    
   Example of Respons body 
-   
         
    ```json
    {
@@ -55,7 +54,8 @@ API: ```https://api.atspeeds.com/:endpoint```
        
    
 * `POST /login`: User LOGIN
-   Request Body
+  
+  Request Body
    
   | Name            | Type            | Description                           |
   |-----------------|------------------|---------------------------------------|
@@ -65,19 +65,21 @@ API: ```https://api.atspeeds.com/:endpoint```
        
        
   Example of Request body JSON
-        
-       ```json
+      
+  
+    ```json
        { 
 	      "userId": "13600000003",
 	      "userPass": "c3RhY2thYnVzZS5jb20=",
               "domain": "33vpn.com"
        }
-       ```
+    ```
    
    
   Example of Respons body 
-        
-       ```json
+    
+
+    ```json
        {
               "result": "success",
               "credential": {
@@ -90,7 +92,8 @@ API: ```https://api.atspeeds.com/:endpoint```
                },
               "jwt":"<jwt_token>"
          }
-	 ```
+   ```
+
 
   | Name            | Type            | Description                           |
   |-----------------|------------------|---------------------------------------|
@@ -108,22 +111,24 @@ API: ```https://api.atspeeds.com/:endpoint```
 
 * `GET /servers`: Return list of VPN servers
    
-     Example response
+  Example response
    
-     ```{
+   ```json
+   {
          "servers": [
              "hk.node.atspeeds.com"
              ]
-      }```
+      
+   }
+   ```
    
    
 * `GET /clients?jwt=<jwt_token>`: GET client credential after login (with JWT token)
    
-      JWT is generated in login 
+  JWT is generated in login. Example of Response
       
-      Example of Response
-      
-      ```{
+   ```json 
+   {
            "result": "success",
             "credential": {
                "domain": "33vpn.com",
@@ -135,64 +140,69 @@ API: ```https://api.atspeeds.com/:endpoint```
                "vpn_remote_id": "vpn.atspeeds.com",
                "server_address_url": "https://api.atspeeds.com/servers"
               }
-      }```
-
+    }
+   ```
 
 
 * `PUT /clients?jwt=<jwt_token>`: Update user status and login password
       
-      Example of Request body JSON
+  Example of Request body JSON
         
-         ```{ 
+   ```json
+   { 
 	      "userId": "13600000003",
               "domain": "33vpn.com",
 	      "userPass": "<newpasswordinbase64>",
 	      "active": 1,
-        }```
+    }
+   ```
 	
 
-
-
-       | Name            | Value            | Description                           |
-       |-----------------|------------------|---------------------------------------|
-       | doamin          | string           | domain name (mandatory)
-       | userId              | string             | phone number (mandatory)               |
-       | userPass | BASE64             | user Password in BASE64 (semi-optional)                        |
-       | active       | Boolean         | Billing status (semi-optional) |
+    | Name            | Value            | Description                           |
+    |-----------------|------------------|---------------------------------------|
+    | doamin          | string           | domain name (mandatory)
+    | userId              | string             | phone number (mandatory)               |
+    | userPass | BASE64             | user Password in BASE64 (semi-optional)                        |
+    | active       | Boolean         | Billing status (semi-optional) |
      
 
 
-      Example of Response
-      
-      
-      ```{
+  Example of Response
+       
+       
+   ```json
+      {
               "result": "success"
-        }```
+      }
+   ```
    
    
 * `delete /clients?jwt=<jwt_token>`: Delete VPN client by phone
 
-      Example of Request body JSON
+  Example of Request body JSON
         
 
-       ```{ 
+   ```json
+   { 
 	      "userId": "13600000003",
               "domain": "33vpn.com"
-        }```
+   }
+   ```
 
 
-       | Name            | Value            | Description                           |
-       |-----------------|------------------|---------------------------------------|
-       | doamin          | string           | domain name (mandatory)
-       | userId              | string             | phone number (mandatory)               |
-       
+   | Name            | Value            | Description                           |
+   |-----------------|------------------|---------------------------------------|
+   | doamin          | string           | domain name (mandatory)
+   | userId              | string             | phone number (mandatory)               |
+           
      
-     
-     Example of Response
+  Example of Response
       
-      ```{
+   ```json
+   {
               "result": "success"
-        }```
+        }
+   ```
    
    
 
