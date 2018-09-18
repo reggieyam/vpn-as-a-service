@@ -13,20 +13,11 @@ API: ```https://api.atspeeds.com/:endpoint```
 
 * `POST /signup`: User Signup
    
-       | Name            | Type            | Description                           |
-       |-----------------|------------------|---------------------------------------|
-       | userId              | uuid             | phone number                         |
-       | userPass            | BASE64           | user Password in BASE64   |
-       | domain              | String           | Domain name               |
-
-       | Name            | Value            | Description                           |
-       |-----------------|------------------|---------------------------------------|
-       | userId          | uuid             | phone number                          |
-       | last_updated    | unixtime         | timestamp at which object was changed |
-       | last_updated_by | handler function | init: created by init function        |
-       |                 |                  | realwave: updated by realwave         |
-       |                 |                  | override: updated by user override.   |
-       |                 |                  | config_change: config change.         |
+  | Name            | Type             | Description                           |
+  |-----------------|------------------|---------------------------------------|
+  | userId          | uuid             | phone number                          |
+  | userPass        | BASE64           | user Password in BASE64               |
+  | domain          | String           | Domain name                           |
        
 Example of Request body JSON
         
@@ -54,12 +45,12 @@ Example of Respons body
    }
    ```
 	
-       | Name            | Type            | Description                           |
-       |-----------------|------------------|---------------------------------------|
-       | results          | string             | success or failed                        |
-       | credential        | Object           | Object of user credential   |
-       | username        | string | username for ikv2 vpn service        |
-       | password        | string                 | password for ikv2 vpn service         |
+  | Name            | Type            | Description                           |
+  |-----------------|------------------|---------------------------------------|
+  | results          | string             | success or failed                        |
+  | credential        | Object           | Object of user credential   |
+  | username        | string | username for ikv2 vpn service        |
+  | password        | string                 | password for ikv2 vpn service         |
        
        
    
