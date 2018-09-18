@@ -53,7 +53,7 @@ API: ```https://api.atspeeds.com/:endpoint```
        
        
    
-* `POST /login`: User LOGIN
+* `POST /login`: User login
   
   Request Body
    
