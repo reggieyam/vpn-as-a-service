@@ -24,16 +24,16 @@ API: ```https://api.atspeeds.com/:endpoint```
        
        Example of Request body JSON
         
-       `{ 
+       ```{ 
 	      "userId": "13600000003",
 	      "userPass": "c3RhY2thYnVzZS5jb20=",
               "domain": "33vpn.com"
-       }`
+       }```
    
    
        Example of Respons body 
         
-       `{
+       ```{
               "credential": {
               "domain": "33vpn.com",
               "userId": "13600000008",
@@ -42,7 +42,7 @@ API: ```https://api.atspeeds.com/:endpoint```
               "password": "f2wq6A"
               },
               "results": "success"
-        }`
+        }```
        
        | Name            | Type            | Description                           |
        |-----------------|------------------|---------------------------------------|
@@ -63,16 +63,16 @@ API: ```https://api.atspeeds.com/:endpoint```
        
        Example of Request body JSON
         
-       `{ 
+       ```{ 
 	      "userId": "13600000003",
 	      "userPass": "c3RhY2thYnVzZS5jb20=",
               "domain": "33vpn.com"
-       }`
+       }```
    
    
        Example of Respons body 
         
-       `{
+       ```{
               "result": "success",
               "credential": {
               "username": "13600000008",
@@ -83,7 +83,7 @@ API: ```https://api.atspeeds.com/:endpoint```
               "server_address_url": "https://api.atspeeds.com/servers"
                },
               "jwt":"<jwt_token>"
-         }`
+         }```
        
        | Name            | Type            | Description                           |
        |-----------------|------------------|---------------------------------------|
@@ -103,18 +103,18 @@ API: ```https://api.atspeeds.com/:endpoint```
    
      Example response
    
-     `{
+     ```{
          "servers": [
              "hk.node.atspeeds.com"
              ]
-      }`
+      }```
    
    * `GET /clients?jwt=<jwt_token>`: GET client credential after login (with JWT token)
       JWT is generated in login 
       
       Example of Response
       
-      `{
+      ```{
            "result": "success",
             "credential": {
                "domain": "33vpn.com",
@@ -126,18 +126,18 @@ API: ```https://api.atspeeds.com/:endpoint```
                "vpn_remote_id": "vpn.atspeeds.com",
                "server_address_url": "https://api.atspeeds.com/servers"
               }
-      }`
+      }```
 
    * `PUT /clients?jwt=<jwt_token>`: Update user status and login password
       
       Example of Request body JSON
         
-       `{ 
+       ```{ 
 	      "userId": "13600000003",
               "domain": "33vpn.com",
 	      "userPass": "<newpasswordinbase64>",
 	      "active": 1,
-        }`
+        }```
 
        | Name            | Value            | Description                           |
        |-----------------|------------------|---------------------------------------|
@@ -148,18 +148,18 @@ API: ```https://api.atspeeds.com/:endpoint```
        
       Example of Response
       
-      `{
+      ```{
               "result": "success"
-        }`
+        }```
    
    * `delete /clients?jwt=<jwt_token>`: Delete VPN client by phone
 
       Example of Request body JSON
         
-       `{ 
+       ```{ 
 	      "userId": "13600000003",
               "domain": "33vpn.com"
-        }`
+        }```
 
        | Name            | Value            | Description                           |
        |-----------------|------------------|---------------------------------------|
@@ -168,9 +168,9 @@ API: ```https://api.atspeeds.com/:endpoint```
        
       Example of Response
       
-      `{
+      ```{
               "result": "success"
-        }`
+        }```
    
    
 
