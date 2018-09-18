@@ -11,11 +11,8 @@ API: ```https://api.atspeeds.com/:endpoint```
 
 ## Endpoint vpn user 
 
-### `POST /signup`: User Signup
+* `POST /signup`: User Signup
    
-#### Request Body
-
-
        | Name            | Type            | Description                           |
        |-----------------|------------------|---------------------------------------|
        | userId              | uuid             | phone number                         |
@@ -23,9 +20,9 @@ API: ```https://api.atspeeds.com/:endpoint```
        | domain              | String           | Domain name               |
        
        
-##### Example of Request body JSON
+Example of Request body JSON
         
-   ```bash
+   ```json
    { 
 	"userId": "13600000003",
 	"userPass": "c3RhY2thYnVzZS5jb20=",
@@ -33,10 +30,11 @@ API: ```https://api.atspeeds.com/:endpoint```
    }
    ```
    
-##### Example of Respons body 
+Example of Respons body 
    
         
-   ```{
+   ```json
+   {
 	"credential": {
 		"domain": "33vpn.com",
 		"userId": "13600000008",
@@ -45,15 +43,15 @@ API: ```https://api.atspeeds.com/:endpoint```
 		"password": "f2wq6A"
 	},
 	"results": "success"
-	}`
+   }
+   ```
 	
-       
-	| Name            | Type            | Description                           |
-	|-----------------|------------------|---------------------------------------|
-	| results          | string             | success or failed                        |
-	| credential        | Object           | Object of user credential   |
-	| username        | string | username for ikv2 vpn service        |
-	| password        | string                 | password for ikv2 vpn service         |
+       | Name            | Type            | Description                           |
+       |-----------------|------------------|---------------------------------------|
+       | results          | string             | success or failed                        |
+       | credential        | Object           | Object of user credential   |
+       | username        | string | username for ikv2 vpn service        |
+       | password        | string                 | password for ikv2 vpn service         |
        
        
    
