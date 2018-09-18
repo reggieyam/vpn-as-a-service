@@ -11,9 +11,9 @@ API: ```https://api.atspeeds.com/:endpoint```
 
 ## Endpoint vpn user ##
 
-   * `POST /signup`: User SIGNUP
+* `POST /signup`: User SIGNUP
    
-       Request Body
+** Request Body
    
        | Name            | Type            | Description                           |
        |-----------------|------------------|---------------------------------------|
@@ -22,29 +22,29 @@ API: ```https://api.atspeeds.com/:endpoint```
        | domain              | String           | Domain name               |
        
        
-	Example of Request body JSON
+Example of Request body JSON
         
-	```{ 
-		"userId": "13600000003",
+   ```{ 
+	"userId": "13600000003",
+	"userPass": "c3RhY2thYnVzZS5jb20=",
+	"domain": "33vpn.com"
+	}```
+   
+   
+   
+Example of Respons body 
+   
+        
+   ```{
+	"credential": {
+		"domain": "33vpn.com",
+		"userId": "13600000008",
 		"userPass": "c3RhY2thYnVzZS5jb20=",
-		"domain": "33vpn.com"
-	   }```
-   
-   
-   
-	Example of Respons body 
-   
-        
-       ```{
-              "credential": {
-              "domain": "33vpn.com",
-              "userId": "13600000008",
-              "userPass": "c3RhY2thYnVzZS5jb20=",
-              "username": "13600000008",
-              "password": "f2wq6A"
-              },
-              "results": "success"
-        }`
+		"username": "13600000008",
+		"password": "f2wq6A"
+	},
+	"results": "success"
+	}`
 	
        
 	| Name            | Type            | Description                           |
