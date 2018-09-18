@@ -11,13 +11,16 @@ API: ```https://api.atspeeds.com/:endpoint```
 
 ## Endpoint vpn user 
 
-* `POST /signup`: User Signup
+* `POST /signup?apikey=<apikey>`: User Signup
    
   | Name            | Type             | Description                           |
   |-----------------|------------------|---------------------------------------|
   | userId          | uuid             | phone number                          |
   | userPass        | BASE64           | user Password in BASE64               |
   | domain          | String           | Domain name                           |
+  | apikey          | String           | API key to make sure valid client app |
+  
+  Please approach administrator for apikey
        
   Example of Request body JSON
         
