@@ -1,10 +1,5 @@
 # vpn-as-a-service
 
-
-# Overview
-
-# vpn-auth
-
 # Using APIv2
 
 API: ```https://api.atspeeds.com/v2/:endpoint```
