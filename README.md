@@ -3,84 +3,103 @@
 
 # Overview
 
-![Flowchart](flowchart.png)
+# vpn-auth
 
-# Using API
+# Using APIv2
 
-API: ```https://api.atspeeds.com/:endpoint```
+API: ```https://api.atspeeds.com/v2/:endpoint```
 
-## Endpoint vpn user 
+## Endpoint vpn user
+* `POST /v2/sendsmscode?apikey=<apikey>`: Send SMS verification code
 
-* `POST /signup?apikey=<apikey>`: User Signup
-   
+   | Name            | Type             | Description                           |
+   |-----------------|------------------|---------------------------------------|
+   | countryCode     | string           | The phone's country code.             |
+   | phoneNumber     | string           | The phone number to send the verification code.              |
+   | domain          | String           | Domain name                           |
+
+   Example of Request body json
+    ```JSON
+    {
+      "countryCode": "86",
+      "phoneNumber": "13600000000",
+      "domain": "33vpn.com",
+    }
+    ```
+
+* `POST /v2/signup?apikey=<apikey>`: User Signup
+
   | Name            | Type             | Description                           |
   |-----------------|------------------|---------------------------------------|
-  | userId          | uuid             | phone number                          |
-  | userPass        | BASE64           | user Password in BASE64               |
+  | countryCode     | string           | The phone's country code.             |
+  | phoneNumber     | string           | The phone number to send the verification code.|
+  | userPass        | BASE64           | Password for customer login           |
   | domain          | String           | Domain name                           |
-  | apikey          | String           | API key to make sure valid client app |
-  
+  | verificationCode| String           | The verification code from the user that is being validated.  |
+
   Please approach administrator for apikey
-       
+
   Example of Request body JSON
-        
+
    ```json
-   { 
-	"userId": "13600000003",
-	"userPass": "c3RhY2thYnVzZS5jb20=",
-	"domain": "33vpn.com"
+   {
+	"countryCode": "86",
+	"phoneNumber": "13600000000",
+  "userPass": "c3RhY2thYnVzZS5jb20=",
+	"domain": "33vpn.com",
+  "verificationCode": "668688"
    }
    ```
-   
-  Example of Respons body 
-        
+
+  Example of Respons body
+
    ```json
    {
 	"credential": {
 		"domain": "33vpn.com",
-		"userId": "13600000008",
+		"userId": "86136000000008",
 		"userPass": "c3RhY2thYnVzZS5jb20=",
-		"username": "13600000008",
+		"username": "8613600000008",
 		"password": "f2wq6A"
 	},
 	"results": "success"
    }
    ```
-	
-  | Name            | Type            | Description                           |
+
+  | Name            | Type             | Description                           |
   |-----------------|------------------|---------------------------------------|
-  | results          | string             | success or failed                        |
-  | credential        | Object           | Object of user credential   |
-  | username        | string | username for ikv2 vpn service        |
-  | password        | string                 | password for ikv2 vpn service         |
-       
-       
-   
-* `POST /login`: User login
-  
+  | results         | string           | success or failed                     |
+  | userId          | string           | Username for customer login           |
+  | userPass        | BASE64           | Password for customer login           |
+  | username        | string           | Username for vpn login                |
+  | password        | string           | Password for vpn login                |
+
+
+* `POST /v2/login`: User login
+
   Request Body
-   
-  | Name            | Type            | Description                           |
+
+  | Name            | Type             | Description                           |
   |-----------------|------------------|---------------------------------------|
-  | userId              | uuid             | phone number                         |
-  | userPass            | BASE64           | user Password in BASE64   |
-  | domain              | String           | Domain name               |
-       
-       
+  | userId          | string           | Username for customer login           |
+  | userPass        | BASE64           | user Password in BASE64               |
+  | domain          | String           | Domain name                           |
+
+
   Example of Request body JSON
-      
-  
+
+
     ```json
-       { 
+       {
 	      "userId": "13600000003",
 	      "userPass": "c3RhY2thYnVzZS5jb20=",
-              "domain": "33vpn.com"
+        "domain": "33vpn.com"
        }
     ```
-   
-   
-  Example of Respons body 
-    
+
+
+  Example of Respons body
+
 
     ```json
        {
@@ -98,39 +117,39 @@ API: ```https://api.atspeeds.com/:endpoint```
    ```
 
 
-  | Name            | Type            | Description                           |
+  | Name            | Type             | Description                           |
   |-----------------|------------------|---------------------------------------|
-  | results          | string             | success or failed                        |
-  | credential        | Object           | Object of user credential   |
+  | results         | string           | success or failed                        |
+  | credential      | Object           | Object of user credential   |
   | username        | string | username for ikv2 vpn service        |
-  | password        | string                 | password for ikv2 vpn service         | 
-  | active        | Boolean                 | user status for billing usage         |  
-  | protocol        | String                 | VPN protocol         |  
-  | vpn_remote_id        | String                 | VPN remote_id         |  
-  | server_address_url        | URL                 | A url to get the list of VPN servers         |  
-  | JWT        | JWT token                 | JWT token for further usage         |  
+  | password        | string           | password for ikv2 vpn service         |
+  | active          | Boolean          | user status for billing usage         |  
+  | protocol        | String           | VPN protocol         |  
+  | vpn_remote_id   | String           | VPN remote_id         |  
+  | server_address_url        | URL    | A url to get the list of VPN servers         |  
+  | JWT             | JWT token        | JWT token for further usage         |  
 
 
 
-* `GET /servers`: Return list of VPN servers
-   
+* `GET /v2/servers`: Return list of VPN servers
+
   Example response
-   
+
    ```json
    {
          "servers": [
              "hk.node.atspeeds.com"
              ]
-      
+
    }
    ```
-   
-   
-* `GET /clients?jwt=<jwt_token>`: GET client credential after login (with JWT token)
-   
+
+
+* `GET /v2/clients?jwt=<jwt_token>`: GET client credential after login (with JWT token)
+
   JWT is generated in login. Example of Response
-      
-   ```json 
+
+   ```json
    {
            "result": "success",
             "credential": {
@@ -147,19 +166,19 @@ API: ```https://api.atspeeds.com/:endpoint```
    ```
 
 
-* `PUT /clients?jwt=<jwt_token>`: Update user status and login password
-      
+* `PUT /v2/clients?jwt=<jwt_token>`: Update user status and login password
+
   Example of Request body JSON
-        
+
    ```json
-   { 
+   {
 	      "userId": "13600000003",
               "domain": "33vpn.com",
 	      "userPass": "<newpasswordinbase64>",
 	      "active": 1,
     }
    ```
-	
+
 
     | Name            | Value            | Description                           |
     |-----------------|------------------|---------------------------------------|
@@ -167,29 +186,29 @@ API: ```https://api.atspeeds.com/:endpoint```
     | userId              | string             | phone number (mandatory)               |
     | userPass | BASE64             | user Password in BASE64 (semi-optional)                        |
     | active       | Boolean         | Billing status (semi-optional) |
-     
+
 
 
   Example of Response
-       
-       
+
+
    ```json
       {
               "result": "success"
       }
    ```
-   
-   
-* `delete /clients?jwt=<jwt_token>`: Delete VPN client by phone
+
+
+* `delete /v2/clients?jwt=<jwt_token>`: Delete VPN client by phone
 
   Example of Request body JSON
-        
+
 
    ```json
-   { 
+    {
 	      "userId": "13600000003",
               "domain": "33vpn.com"
-   }
+    }
    ```
 
 
@@ -197,15 +216,13 @@ API: ```https://api.atspeeds.com/:endpoint```
    |-----------------|------------------|---------------------------------------|
    | doamin          | string           | domain name (mandatory)
    | userId              | string             | phone number (mandatory)               |
-           
-     
+
+
   Example of Response
-      
+
    ```json
    {
               "result": "success"
-        }
+   }
    ```
-   
-   
 
