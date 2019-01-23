@@ -86,7 +86,7 @@ API: ```https://api.atspeeds.com/v2/:endpoint```
 
     ```json
        {
-	      "userId": "13600000003",
+	      "userId": "8613600000003",
 	      "userPass": "c3RhY2thYnVzZS5jb20=",
         "domain": "33vpn.com"
        }
@@ -100,7 +100,7 @@ API: ```https://api.atspeeds.com/v2/:endpoint```
        {
               "result": "success",
               "credential": {
-              "username": "13600000008",
+              "username": "8613600000008",
               "password": "f2wq6A",
               "active": 0,
               "protocol": "IKEv2",
@@ -149,7 +149,7 @@ API: ```https://api.atspeeds.com/v2/:endpoint```
            "result": "success",
             "credential": {
                "domain": "33vpn.com",
-               "userId": "13600000008",
+               "userId": "8613600000008",
                "username": "13600000008",
                "password": "f2wq6A",
                "active": 0,
@@ -167,7 +167,7 @@ API: ```https://api.atspeeds.com/v2/:endpoint```
 
    ```json
    {
-	      "userId": "13600000003",
+	      "userId": "8613600000003",
               "domain": "33vpn.com",
 	      "userPass": "<newpasswordinbase64>",
 	      "active": 1,
@@ -201,7 +201,7 @@ API: ```https://api.atspeeds.com/v2/:endpoint```
 
    ```json
     {
-	      "userId": "13600000003",
+	      "userId": "8613600000003",
               "domain": "33vpn.com"
     }
    ```
