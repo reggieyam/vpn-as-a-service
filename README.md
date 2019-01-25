@@ -133,7 +133,8 @@ API: ```https://api.atspeeds.com/v2/:endpoint```
    ```json
    {
          "servers": [
-             "hk.node.atspeeds.com"
+             "hk.node.atspeeds.com",
+	     "jp.node.atspeeds.com"
              ]
 
    }
